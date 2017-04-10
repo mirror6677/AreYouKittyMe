@@ -3,6 +3,7 @@ package com.example.android.areyoukittyme;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,6 +18,9 @@ public class VocabActivity extends AppCompatActivity {
     private Button studyButton;
     private Button reviewButton;
     private ProgressBar progressBar;
+    private int mProgressStatus = 0;
+
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,7 @@ public class VocabActivity extends AppCompatActivity {
 
         studyButton = (Button)findViewById(R.id.vocab_study_button2);
         reviewButton = (Button)findViewById(R.id.vocab_Review_button);
-        progressBar = (ProgressBar)findViewById(R.id.vocab_progressBar2);
+        progressBar = (ProgressBar)findViewById(R.id.Vocab_progressBar);
 
         Intent vocabIntent = getIntent();
 
@@ -59,7 +63,21 @@ public class VocabActivity extends AppCompatActivity {
             }
 
         });
+/*
+        new Thread(new Runnable() {
+            public void run() {
+                while (mProgressStatus < 100) {
+                    mProgressStatus = doWork();
 
-        //progressBar.set
+                    // Update the progress bar
+                    mHandler.post(new Runnable() {
+                        public void run() {
+                            progressBar.setProgress(mProgressStatus);
+                        }
+                    });
+                }
+            }
+        }).start();
+*/
     }
 }
