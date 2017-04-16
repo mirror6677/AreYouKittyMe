@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.sql.DatabaseMetaData;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 
 
 
-public class VocabRepo {
+public class Vocab_Repo {
 
 
     /**
@@ -23,10 +22,10 @@ public class VocabRepo {
 
 
     private Vocab vocab;
-    private final String TAG = VocabRepo.class.getName().toString();
+    private final String TAG = Vocab_Repo.class.getName().toString();
     private VocabList vocabList;
 
-    public VocabRepo() {
+    public Vocab_Repo() {
         this.vocab = new Vocab();
     }
 

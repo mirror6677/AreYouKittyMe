@@ -4,7 +4,7 @@ package com.example.android.areyoukittyme.vocabs_activity;
  * Created by haoyuxiong on 4/11/17.
  */
 
-public class Vocab_progress_general {
+public class Vocab_Progress_General {
 
     private int numOfVocabStudied;
     private int numOfVocabStudying;
@@ -12,7 +12,7 @@ public class Vocab_progress_general {
     private int numOfVocabInTotal;
     private String nameOfTheVocabList;
 
-    public Vocab_progress_general(int numOfVocabInTotal, String nameOfTheVocabList){
+    public Vocab_Progress_General(int numOfVocabInTotal, String nameOfTheVocabList){
         this.numOfVocabInTotal = numOfVocabInTotal;
         this.numOfVocabHaventStudied = numOfVocabInTotal;
         this.numOfVocabStudied = 0;

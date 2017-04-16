@@ -14,14 +14,16 @@ public class Vocab_DatabaseManager {
     private static Vocab_DatabaseManager instance;
     private static SQLiteOpenHelper mDatabaseHelper;
     private SQLiteDatabase mDatabase;
-    private Vocab_progress_general vocabGeneralProgress;
+    private static Vocab_Progress_General vocabGeneralProgress;
 
     public static synchronized void initializeInstance(SQLiteOpenHelper helper) {
         if (instance == null) {
             instance = new Vocab_DatabaseManager();
             mDatabaseHelper = helper;
+
         }
     }
+
 
     public static synchronized Vocab_DatabaseManager getInstance() {
         if (instance == null) {
@@ -32,11 +34,11 @@ public class Vocab_DatabaseManager {
         return instance;
     }
 
-    public Vocab_progress_general getVocabGeneralProgress() {
+    public Vocab_Progress_General getVocabGeneralProgress() {
         return vocabGeneralProgress;
     }
 
-    public void setVocabGeneralProgress(Vocab_progress_general vocabGeneralProgress) {
+    public void setVocabGeneralProgress(Vocab_Progress_General vocabGeneralProgress) {
         this.vocabGeneralProgress = vocabGeneralProgress;
     }
 

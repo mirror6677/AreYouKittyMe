@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Created by haoyuxiong on 4/12/17.
  */
 
-public class Vocab_data_csv_process {
+public class Vocab_Data_Csv_Process {
 
     public static Scanner ReadInVocabData(String filename){
 
