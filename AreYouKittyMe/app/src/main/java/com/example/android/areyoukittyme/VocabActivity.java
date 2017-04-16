@@ -30,7 +30,7 @@ public class VocabActivity extends AppCompatActivity {
 
         studyButton = (Button)findViewById(R.id.vocab_study_button2);
         reviewButton = (Button)findViewById(R.id.vocab_Review_button);
-        progressBar = (ProgressBar)findViewById(R.id.Vocab_progressBar);
+        progressBar = (ProgressBar)findViewById(R.id.vocab_progressBar);
 
         Intent vocabIntent = getIntent();
 

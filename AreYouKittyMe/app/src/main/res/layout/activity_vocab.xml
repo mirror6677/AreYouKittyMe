@@ -59,10 +59,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <ProgressBar
-        android:id="@+id/Vocab_progressBar"
-        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
-        android:layout_width="wrap_content"
+        android:id="@+id/vocab_progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Vocab_textView2"
-        android:layout_alignEnd="@+id/vocab_Review_button" />
+        android:layout_alignBottom="@+id/vocab_textView"
+        android:layout_alignStart="@+id/vocab_Review_button"
+        android:layout_alignTop="@+id/vocab_textView" />
+
 </RelativeLayout>
