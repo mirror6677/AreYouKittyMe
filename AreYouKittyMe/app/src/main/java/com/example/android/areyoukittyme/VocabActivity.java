@@ -76,6 +76,7 @@ public class VocabActivity extends AppCompatActivity {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, books);
 
             //alertDialogBuilder.setTitle("");
+            alertDialogBuilder.setTitle("Vocab book..");
 
             final AlertDialog alertDialog = alertDialogBuilder.create();
 
@@ -90,7 +91,6 @@ public class VocabActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     try {
-                        System.out.println(getFilename(mSpinner.getSelectedItemPosition()));
                         Vocab_Repo.addAnEntireVocabListToTheDataBase(getAssets().open(getFilename(mSpinner.getSelectedItemPosition())));
                         alertDialog.dismiss();
                     } catch (IOException e1) {
@@ -165,6 +165,12 @@ public class VocabActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Gets the filenames for the library that the user will be using.
+     *
+     * @param index The index of the files.
+     * @return The string of the filename according to the index.
+     */
     public String getFilename(int index){
         switch(index){
             case 0:
@@ -181,6 +187,11 @@ public class VocabActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Called when menu items are selected
+     * @param item The item selected
+     * @return true when pressed.
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
