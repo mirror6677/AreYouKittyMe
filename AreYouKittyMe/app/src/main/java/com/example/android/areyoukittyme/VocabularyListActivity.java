@@ -37,7 +37,6 @@ public class VocabularyListActivity extends TabActivity {
         tabHost.addTab(spec);
 
         // Do the same for the other tabs
-
         spec = tabHost.newTabSpec("Not Started"); // Create a new TabSpec using tab host
         spec.setIndicator("Not Started"); // set the “CONTACT” as an indicator
         // Create an Intent to launch an Activity for the tab (to be reused)
@@ -53,7 +52,6 @@ public class VocabularyListActivity extends TabActivity {
         tabHost.addTab(spec);
         //set tab which one you want to open first time 0 or 1 or 2
 
-
         tabHost.setCurrentTab(1);
 
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
@@ -63,9 +61,5 @@ public class VocabularyListActivity extends TabActivity {
                 Toast.makeText(getApplicationContext(), tabId, Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
-
-
 }

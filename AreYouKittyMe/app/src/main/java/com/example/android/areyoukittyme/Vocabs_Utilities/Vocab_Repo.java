@@ -133,11 +133,24 @@ public class Vocab_Repo {
         SQLiteDatabase db = Vocab_DatabaseManager.getInstance().openDatabase();
         String selectQuery = "SELECT  * FROM " + Vocab.TABLE ;
         Cursor cursor = db.rawQuery(selectQuery, null);
+        int i = cursor.getCount();
         cursor.close();
         Vocab_DatabaseManager.getInstance().closeDatabase();
 
 
-        return cursor.getCount();
+        return i;
+
+    }
+
+    public static int getProgressPercent(){
+        int i = getCurrentVocabCount();
+        SQLiteDatabase db = Vocab_DatabaseManager.getInstance().openDatabase();
+        String selectQuery = "SELECT  * FROM " + Vocab.TABLE + "WHERE Vocab.progress = 0";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        int j =cursor.getCount();
+        cursor.close();
+        Vocab_DatabaseManager.getInstance().closeDatabase();
+        return (j/i)*100;
 
     }
 

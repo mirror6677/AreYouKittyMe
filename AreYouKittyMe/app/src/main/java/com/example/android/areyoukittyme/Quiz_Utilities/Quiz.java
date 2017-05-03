@@ -89,20 +89,18 @@ public class Quiz {
      * @throws ParseException
      */
     public void processCorrectAnswer(Question question) throws ParseException {
-
         if(question.getVocab().getProgress() == 0){
             Vocab_Repo.updateAWordOnItsProgress(1,question.getVocab().getVocab_Id(),0);
-            numOfQuestionStudiedToday += 1;
+            //numOfQuestionStudiedToday += 1;
         }else if(question.getVocab().getProgress()==1){
             Vocab_Repo.updateAWordOnItsReviewPeriod(question.getVocab().getVocab_Id());
         }
     }
 
-
     public void processYoAnswer(Question question) throws ParseException {
         if(question.getVocab().getProgress() == 0){
             Vocab_Repo.updateAWordOnItsProgress(1,question.getVocab().getVocab_Id(),0);
-            numOfQuestionStudiedToday += 1;
+            //numOfQuestionStudiedToday += 1;
         }
     }
 
@@ -124,7 +122,12 @@ public class Quiz {
      * Change the current question to the next.
      */
     public void toNextQuestion(){
+        this.numOfQuestionStudiedToday += 1;
         this.currentQuestion = getUnansweredQuestion();
+    }
+
+    public int getNumOfQuestionStudiedToday() {
+        return numOfQuestionStudiedToday;
     }
 
     /**
@@ -144,7 +147,6 @@ public class Quiz {
         return currentQuestion;
     }
 
-
     public int getRecord() {
         return record;
     }
@@ -160,6 +162,4 @@ public class Quiz {
     public void setExited(boolean exited) {
         this.exited = exited;
     }
-
-
 }
