@@ -146,8 +146,11 @@ public class Vocab_Repo {
         int i = getCurrentVocabCount();
         SQLiteDatabase db = Vocab_DatabaseManager.getInstance().openDatabase();
         String selectQuery = "SELECT  * FROM " + Vocab.TABLE + "WHERE Vocab.progress = 0";
+        System.out.println("1");
         Cursor cursor = db.rawQuery(selectQuery, null);
+        System.out.println("2");
         int j =cursor.getCount();
+        System.out.println("3");
         cursor.close();
         Vocab_DatabaseManager.getInstance().closeDatabase();
         return (j/i)*100;
